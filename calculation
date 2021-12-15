@@ -1,0 +1,168 @@
+using System;
+
+namespace ConsoleApp61
+{
+    class Program
+    {
+        public struct MyDateTime
+        {
+            public  string meseci;
+
+            public  string dnevi;
+
+            public int minute;
+
+            public MyDateTime(string meseci, string dnevi, int minute)
+            {
+                this.meseci = meseci;
+                this.dnevi = dnevi;
+                this.minute = minute;
+            }
+
+            public string Meseci
+            {
+                get
+                {
+                    return this.meseci;
+                }
+            }
+
+            public string Dnevi
+            {
+                get
+                {
+                    return this.dnevi;
+                }
+            }
+
+            public int Minute
+            {
+                get
+                {
+                    return this.minute;
+                }
+            }
+        }
+        public static void Main(string[] args)
+        {
+            //calculate how many minutes you've been working - Mestna občina Slovenj Gradec
+
+            // pomagaš si z eodobritve reports
+
+            string dnevi; // 31, 30 ali 28, maš strukturo, + januar si delal le 5 dni ker si pozneje začel
+            int meseciDelovnihDni = 5; // januar, februar, marec, april, maj, junij, julij, avgust, september, oktober, november, december
+            int minute; // to je cilj naloge, da se to izračuna
+            int dopust = 18; // tolk sem ga imel
+            int malica;
+            string startTime = "01-22-2021"; // petek 22.1.2021 start time at občina
+            int count = 0; // štetje dnevov
+            int vikendi; // sobota, nedelja, prazniki
+            int sklad; // plus ure, koliko več si tukaj in nato porabiš
+            int skladStaro; // od prejšnjega meseca ali več
+            int ureRazlika; // koliko je viška ur
+            int obveznost; // koliko ur moraš narediti v določenem mesecu
+            int ure; // 8,6 ali 10 na dan
+            int nadure = 0; // ker so javna dela
+            MyDateTime m = new MyDateTime();
+            Console.WriteLine("Vnesi koliko dni si delal!");
+            meseciDelovnihDni = int.Parse(Console.ReadLine());
+            for(int i = 0; i < meseciDelovnihDni; i++)
+            {
+                dnevi = startTime;
+                if (m.Meseci == "Januar")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "Februar")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "Marec")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "April")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "Maj")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "Junij")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "Julij")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "Avgust")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "September")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "Oktober")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "November")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                if (m.Meseci == "December")
+                {
+                    if (m.Dnevi == "Ponedeljek" || m.Dnevi == "Torek" || m.Dnevi == "Sreda" || m.Dnevi == "Četrtek" || m.Dnevi == "Petek")
+                    {
+                        count++;
+                    }
+                }
+                int sum = 0;
+                sum += count;
+               
+                Console.WriteLine(sum);
+            }
+            Console.ReadLine();
+           
+           
+
+
+        }
+    }
+}
